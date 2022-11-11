@@ -1,0 +1,16 @@
+syntax = "proto3";
+package model.common;
+
+option go_package = "github.com/locngodn/gas-common/model/pb";
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+message StaffStationWarehouse {
+    string staffId = 1 [(gogoproto.moretags) = "sql:\",pk\""];
+	string stationWarehouseId = 2 [(gogoproto.moretags) = "sql:\",pk\""];
+}
+
+message StaffStationWarehouses {
+    string staffId = 1;
+    repeated StaffStationWarehouse data = 2;
+}
